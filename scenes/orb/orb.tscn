@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmuhdvnigx0ap"]
+
+[ext_resource type="Script" path="res://scenes/orb/orb.gd" id="1_wttrg"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8df05"]
+radius = 0.567415
+
+[sub_resource type="SphereMesh" id="SphereMesh_yvqhm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c7b8d"]
+albedo_color = Color(0.313726, 0.384314, 1, 1)
+
+[node name="Orb" type="StaticBody3D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_wttrg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_8df05")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_yvqhm")
+surface_material_override/0 = SubResource("StandardMaterial3D_c7b8d")
